@@ -32,3 +32,13 @@ pyclean .
 ```
 
 http://manpages.ubuntu.com/manpages/trusty/man1/py3clean.1.html
+
+## 2019-10-07
+
+### Built-in statistics functions
+
+Tags: `python` `statistics`
+
+Python has a built-in statistics module containing basic statistical functions:
+
+https://docs.python.org/3/library/statistics.html
