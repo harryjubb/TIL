@@ -1,6 +1,17 @@
 # TIL
 Today I Learned
 
+## 2019-10-30
+
+### Create a URL for a `File` or `Blob`
+
+Tags: `javascript` `frontend`
+
+You can turn a `Blob` or similar into a URL for download with `createObjectURL`.
+
+https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL
+https://gist.github.com/danallison/3ec9d5314788b337b682
+
 ## 2019-10-29
 
 ### Performance-orientated timing
