@@ -18,9 +18,10 @@ asyncio.run(main())
 ```
 
 https://docs.python.org/3/whatsnew/3.8.html#asyncio
+
 https://docs.python.org/3/library/asyncio-task.html#asyncio.run
 
-Via @redraw
+Via [@redraw](https://github.com/redraw)
 
 ### Create a URL for a `File` or `Blob`
 
@@ -29,6 +30,7 @@ Tags: `javascript` `frontend`
 You can turn a `Blob` or similar into a URL for download with `createObjectURL`.
 
 https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL
+
 https://gist.github.com/danallison/3ec9d5314788b337b682
 
 ## 2019-10-29
