@@ -3,6 +3,25 @@ Today I Learned
 
 ## 2019-10-30
 
+### Nicer async in Python
+
+Tags: `python` `python3.8` `async`
+
+`asyncio.run`, a much nicer interface to managing an async event loop, is stable in Python 3.8.
+
+```
+async def main():
+    await asyncio.sleep(1)
+    print('hello')
+
+asyncio.run(main())
+```
+
+https://docs.python.org/3/whatsnew/3.8.html#asyncio
+https://docs.python.org/3/library/asyncio-task.html#asyncio.run
+
+Via @redraw
+
 ### Create a URL for a `File` or `Blob`
 
 Tags: `javascript` `frontend`
