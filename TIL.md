@@ -1,6 +1,16 @@
 # TIL
 Today I Learned
 
+## 2019-11-02
+
+### Docker images on different architectures
+
+Tags: `docker` `raspberrypi`
+
+Feels a little obvious: Docker images (for example on DockerHub) that were built for one processing architecture may throw errors on another one; for example on Raspberry Pis using Arm processors for x86 built images.
+
+The solution is to build the image locally on the Pi, wherein the build will be specific to the correct architecture.
+
 ## 2019-10-30
 
 ### Nicer async in Python
