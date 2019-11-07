@@ -1,6 +1,16 @@
 # TIL
 Today I Learned
 
+## 2019-11-06
+
+### Profile Python with multithreading support
+
+Tags: `python`
+
+Yappi can profile Python across multiple threads:
+
+https://github.com/sumerc/yappi
+
 ## 2019-11-02
 
 ### Docker images on different architectures
