@@ -1,6 +1,14 @@
 # TIL
 Today I Learned
 
+## 2019-11-08
+
+### Safely parse Python literals from untrusted input strings
+
+Tags: `python`
+
+[`ast.literal_eval`](https://docs.python.org/3.7/library/ast.html#ast.literal_eval) can be used to safely parse strings as a limited set of Python literals.
+
 ## 2019-11-06
 
 ### Profile Python with multithreading support
