@@ -1,6 +1,64 @@
 # TIL
 Today I Learned
 
+## 2019-11-19
+
+### Use new `typing` features in older versions of Python
+
+Tags: `python` `python3.5` `python3.6` `python3.7` `python3.8` `typing`
+
+New accepted or experimental `typing` PEPs are backported to older versions of Python that already included `typing` in the standard library on a provisional basis, via the [`typing_extensions` PyPI package](https://pypi.org/project/typing-extensions/).
+
+```pip install typing-extensions```
+
+```python
+#!/usr/bin/python3.6
+
+from typing_extensions import 
+```
+
+`typing_extensions` allows you to use e.g. types added in Python 3.8 in Python 3.7 or 3.6, for example `typing.Literal`. 
+
+For versions older than 3.5 (before `typing` was added to the standard library), there is also the `typing` module on PyPI to backport `typing` to those versions.
+
+### Typed dictionaries
+
+Tags: `python` `python3.8` `typing`
+
+[PEP-589]() adds support for typing dictionaries requiring a fixed set of string keys with specific value types.
+
+Example from the [Python docs](https://docs.python.org/3/library/typing.html#typing.TypedDict):
+
+```python3
+class Point2D(TypedDict):
+    x: int
+    y: int
+    label: str
+
+a: Point2D = {'x': 1, 'y': 2, 'label': 'good'}  # OK
+b: Point2D = {'z': 3, 'label': 'bad'}           # Fails type check
+```
+
+### Literal typing
+
+Tags: `python` `python3.8` `typing`
+
+[PEP-586](https://www.python.org/dev/peps/pep-0586/) adds support for type annotations where literal values are expected.
+
+Example from the PEP:
+
+```python3
+from typing import Literal
+
+def accepts_only_four(x: Literal[4]) -> None:
+    pass
+
+accepts_only_four(4)   # OK
+accepts_only_four(19)  # Rejected
+```
+
+See also the [Python docs](https://docs.python.org/3/library/typing.html#typing.Literal).
+
 ## 2019-11-08
 
 ### Safely parse Python literals from untrusted input strings
@@ -37,7 +95,7 @@ Tags: `python` `python3.8` `async`
 
 `asyncio.run`, a much nicer interface to managing an async event loop, is stable in Python 3.8.
 
-```
+```python3
 async def main():
     await asyncio.sleep(1)
     print('hello')
