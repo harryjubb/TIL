@@ -14,7 +14,7 @@ New accepted or experimental `typing` PEPs are backported to older versions of P
 ```python
 #!/usr/bin/python3.6
 
-from typing_extensions import 
+from typing_extensions import Literal
 ```
 
 `typing_extensions` allows you to use e.g. types added in Python 3.8 in Python 3.7 or 3.6, for example `typing.Literal`. 
