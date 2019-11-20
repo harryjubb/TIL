@@ -1,6 +1,16 @@
 # TIL
 Today I Learned
 
+## 2019-11-20
+
+### Flatten nested arrays natively
+
+Tags: `javascript` `ES2019`
+
+ES2019 adds `Array.prototype.flat`, which you can use to [flatten arrays to a supplied depth](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat).
+
+The proposal is [Stage 4](https://github.com/tc39/proposal-flatMap) along with `flatMap`.
+
 ## 2019-11-19
 
 ### Use new `typing` features in older versions of Python
