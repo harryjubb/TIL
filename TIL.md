@@ -1,6 +1,16 @@
 # TIL
 Today I Learned
 
+## 2019-11-21
+
+### Browser-native toggles, modals, and progress bars
+
+Tags: `html`
+
+HTML 5.2 includes `<summary>`, `<details>`, `<dialog>`, `<meter>`, and `<progress>` tags, providing native alternatives to many components usually supplied by libraries or frameworks.
+
+Via [AppsFlyer](https://medium.com/appsflyer/10-superpowers-html5-gives-you-and-you-are-not-using-fbbf5824bba6)
+
 ## 2019-11-20
 
 ### Flatten nested arrays natively
