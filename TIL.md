@@ -1,6 +1,16 @@
 # TIL
 Today I Learned
 
+## 2019-12-02
+
+### Quickly jump through changes
+
+Tags: `vim` `neovim`
+
+Use `g;` and `g,` to quickly jump backwards and forwards through the history of cursor positions of changes.
+
+See `:h g;`
+
 ## 2019-11-21
 
 ### Browser-native toggles, modals, and progress bars
