@@ -1,6 +1,18 @@
 # TIL
 Today I Learned
 
+## 2019-12-11
+
+### Default override configuration
+
+Tags: `docker` `docker-compose`
+
+`docker-compose.override.yml` is read by `docker-compose` by default, laid on top of `docker-compose.yml`.
+
+Using `docker-compose.override.yml` allows for use cases where, for example, an image is built locally for development, but pulled in production: the build (placed in `docker-compose.override.yml`) can be avoided entirely with `docker-compose -f docker-compose.yml -f docker-compose.production.yml` to exclude the `override` entirely.
+
+More in the [compose documentation](https://docs.docker.com/compose/extends/#multiple-compose-files).
+
 ## 2019-12-02
 
 ### Quickly jump through changes
