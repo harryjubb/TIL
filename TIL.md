@@ -1,6 +1,16 @@
 # TIL
 Today I Learned
 
+## 2019-12-18
+
+### F-strings are the fastest string interpolation method
+
+Tags: `python` `python3.8`
+
+F-strings outperform every other method. Interestingly, concatenation outperforms `.format`.
+
+https://twitter.com/raymondh/status/1205969258800275456
+
 ## 2019-12-11
 
 ### Default override configuration
