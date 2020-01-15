@@ -1,6 +1,26 @@
 # TIL
 Today I Learned
 
+## 2020-01-15
+
+### Get an alert when terminal commands finish
+
+Tags: `bash` `zsh`
+
+When running a long terminal command, it would be nice to be able to do something else while it runs, but be notified when it's finished.
+
+The following `bash`/`zsh` function rings the terminal bell when the command passed to it either finishes or fails:
+
+```bash
+function ring () {
+	($@ && tput bel) || tput bel
+}
+```
+
+`ring` could also be adapted to send a notification with a custom message, using e.g. Applescript `osascript`.
+
+Alternatively, there are richer solutions, such as [NotiFyre](https://github.com/kaustubhhiware/NotiFyre).
+
 ## 2019-12-18
 
 ### F-strings are the fastest string interpolation method
