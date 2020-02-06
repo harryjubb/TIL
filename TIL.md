@@ -1,6 +1,60 @@
 # TIL
 Today I Learned
 
+## 2020-02-06
+
+### Use a custom `GraphQLView` for better traceback handling
+
+Tags: `python` `django` `graphql` `graphene` `graphene-django`
+
+When using [Graphene-Django](https://github.com/graphql-python/graphene-django) to use GraphQL with Django, GraphQL swallows your error messages and tracebacks, making it more difficult to debug exceptions in resolvers.
+
+There is a [GitHub issue](https://github.com/graphql-python/graphene-django/issues/124) discussing the problem, a number of solutions are suggested including using middleware, however middleware has the caveat that it has to be applied individually on each request.
+
+A generally applicable solution is subclassing `GraphQLView` and adding back the traceback there (adapted from [Martin Samami on Medium](https://medium.com/@martin.samami/make-graphene-django-and-sentry-exceptions-work-together-f796be60a901) adding Sentry logging):
+
+```python3
+import traceback
+from pprint import pprint
+from graphene_django.views import GraphQLView
+
+
+class ErrorLoggingGraphQLView(GraphQLView):
+    """
+    GraphQL view that logs errors better for easier debugging.
+
+    https://github.com/graphql-python/graphene-django/issues/124#issuecomment-368283927
+    https://medium.com/@martin.samami/make-graphene-django-and-sentry-exceptions-work-together-f796be60a901
+    """
+
+    def execute_graphql_request(self, *args, **kwargs):
+        """Extract any exceptions and log them better than the default"""
+        result = super().execute_graphql_request(*args, **kwargs)
+        if result.errors:
+            for error in result.errors:
+                try:
+                    raise error.original_error
+                except Exception as original_error:
+                    pprint(original_error)
+                    traceback.print_exc()
+        return result
+```
+
+Then in your `urls.py`:
+
+```python3
+from django.urls import include, path
+from django.views.decorators.csrf import csrf_exempt
+from your_schema_location import schema
+from your_module import ErrorLoggingGraphQLView
+
+urlpatterns = [
+    path(
+        "graphql/", csrf_exempt(ErrorLoggingGraphQLView.as_view(schema=schema, graphiql=True))
+    ),
+]
+```
+
 ## 2020-01-15
 
 ### Get an alert when terminal commands finish
