@@ -1,6 +1,29 @@
 # TIL
 Today I Learned
 
+## 2020-02-12
+
+### Dynamic configuration of Dockerised nginx
+
+Tags: `nginx` `docker` `bash` `shell`
+
+If you want to bake an `nginx` config into a Docker image, and/or dynamically set configuration in a volume mounted config, you can have the `COMMAND` for the container use `envsubsr` to substitute in environment variable values in the config before the `nginx` process is started, for example in a `docker-compose.yml`:
+
+```yaml
+web:
+  image: nginx
+  volumes:
+   - ./mysite.template:/etc/nginx/conf.d/mysite.template
+  ports:
+   - "8080:80"
+  environment:
+   - NGINX_HOST=foobar.com
+   - NGINX_PORT=80
+  command: /bin/bash -c "envsubst < /etc/nginx/conf.d/mysite.template > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"
+```
+
+From https://hub.docker.com/_/nginx
+
 ## 2020-02-06
 
 ### Use a custom `GraphQLView` for better traceback handling
