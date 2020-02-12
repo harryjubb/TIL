@@ -5,7 +5,7 @@ Today I Learned
 
 ### Dynamic configuration of Dockerised nginx
 
-Tags: `nginx` `docker` `bash` `shell`
+Tags: `nginx` `docker` `bash` `shell` `*nix`
 
 If you want to bake an `nginx` config into a Docker image, and/or dynamically set configuration in a volume mounted config, you can have the `COMMAND` for the container use [**`envsubst`**](https://www.gnu.org/software/gettext/manual/html_node/envsubst-Invocation.html) to substitute in environment variable values in the config before the `nginx` process is started, for example in a `docker-compose.yml`:
 
