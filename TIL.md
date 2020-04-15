@@ -3,6 +3,14 @@ Today I Learned
 
 ## 2020-02-12
 
+### Checking TCP connectivity with `telnet`
+
+Tags: `networking` `bash` `shell` `*nix`
+
+https://netbeez.net/blog/telnet-to-test-connectivity-to-tcp/
+
+## 2020-02-12
+
 ### Dynamic configuration of Dockerised nginx
 
 Tags: `nginx` `docker` `bash` `shell` `*nix`
