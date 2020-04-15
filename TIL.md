@@ -1,7 +1,7 @@
 # TIL
 Today I Learned
 
-## 2020-02-12
+## 2020-04-15
 
 ### Checking TCP connectivity with `telnet`
 
