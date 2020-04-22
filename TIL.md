@@ -3,6 +3,16 @@ Today I Learned
 
 ## 2020-04-15
 
+### Easily log output of userdata scripts for debugging
+
+Tags: `aws` `cloud` `bash` `shell` `*nix`
+
+Log userdata scripts for cloud instances in detail, to allow easier debugging of any issues when the script is run when the instance is initialised.
+
+https://aws.amazon.com/premiumsupport/knowledge-center/ec2-linux-log-user-data/
+
+## 2020-04-15
+
 ### Checking TCP connectivity with `telnet`
 
 Tags: `networking` `bash` `shell` `*nix`
