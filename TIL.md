@@ -1,7 +1,7 @@
 # TIL
 Today I Learned
 
-## 2020-04-15
+## 2020-04-22
 
 ### Easily log output of userdata scripts for debugging
 
