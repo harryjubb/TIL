@@ -1,6 +1,20 @@
 # TIL
 Today I Learned
 
+## 2020-05-05
+
+### Grab a file from another `git` branch
+
+Tags: `git`
+
+While `cherry-pick` is great for copying over specific commits, if you want to grab a whole file onto your current branch from another, it's a simple as a `checkout`:
+
+```shell
+git checkout my-awesome-source-branch the/path/to/yourfile.rad
+```
+
+https://github.com/thoughtbot/til/blob/master/git/grab-a-file-from-another-branch.md
+
 ## 2020-04-22
 
 ### Easily log output of userdata scripts for debugging
