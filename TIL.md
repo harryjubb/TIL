@@ -1,6 +1,19 @@
 # TIL
 Today I Learned
 
+
+## 2020-06-20
+
+### Grab a file from another `git` branch
+
+Tags: `git`
+
+Avoid a lot of messy merge commits by rebasing on pull by default:
+
+```shell
+git config --global pull.rebase true
+```
+
 ## 2020-05-05
 
 ### Grab a file from another `git` branch
