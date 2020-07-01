@@ -1,6 +1,44 @@
 # TIL
 Today I Learned
 
+## 2020-06-20
+
+### Dynamically import from folders with Webpack
+
+Tags: `javascript` `typescript` `webpack` `frontend`
+
+If you have a folder of files you want to import at build-time, Webpack can traverse the folder structure for you and import them. For example, to import every Vue file (assuming you're using a Vue Webpack loader):
+
+```javascript
+const cache = {}
+
+function importAll (r) {
+  r.keys().forEach(key => { cache[key] = r(key) })
+}
+
+importAll(require.context('./plugins', true, /\.vue$/))
+```
+
+`cache` has key:value pairs of filename: `Module`.
+
+In Vue for example, this can be used to import a large set of components without importing them all individually or maintaining a manifest:
+
+```typescript
+const plugins = Object.fromEntries(
+  Object.entries(cache).map(([filename, esModule]) => [
+    esModule.default.name, esModule.default
+  ])
+)
+
+export default Vue.extend({
+  name: 'Plugins',
+  components: {
+    ...plugins
+  }
+})
+```
+
+More info at https://webpack.js.org/guides/dependency-management/#context-module-api
 
 ## 2020-06-20
 
