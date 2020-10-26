@@ -1,6 +1,18 @@
 # TIL
 Today I Learned
 
+## 2020-10-26
+
+### Postgres template databases
+
+Tags: `postgres` `database`
+
+You can update the default template database, `template1`, by running commands against it (e.g. `CREATE EXTENSION`). Subsequent created databases will be based off of the updated `template1`, which is handy for setting defaults for all creating databases to inherit.
+
+If you mess up `template1` somehow, it can be restored to it's original setup from the uneditable `template0` database.
+
+https://www.postgresql.org/docs/13/manage-ag-templatedbs.html
+
 ## 2020-06-20
 
 ### Dynamically import from folders with Webpack
