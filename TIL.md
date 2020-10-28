@@ -1,6 +1,23 @@
 # TIL
 Today I Learned
 
+## 2020-10-28
+
+### Quick SSL certificates in a pinch
+
+Tags: `ssl` `letsencrypt` `certbot` `docker`
+
+If you need a certificate quickly (and free) and you're not able to set up automated Let'sEncrypt renewal, you can grab a three month valid certificate by running Certbot manually in Docker, e.g.
+
+```
+docker run -it --rm --name certbot \
+            -v "$(pwd)/etc:/etc/letsencrypt" \
+            -v "$(pwd)/lib:/var/lib/letsencrypt" \
+            certbot/certbot -d '*.domain.com' --manual --preferred-challenges dns certonly
+```
+
+Certbot will interactively take you through validating via setting a DNS `TXT` record manually. The certificates live in `etc/live/domain.com` on your host system (from the `pwd` bind mount), will last for three months. `fullchain.pem` is the full certificate chain used for web servers, `privkey.pem` is the private key.
+
 ## 2020-10-26
 
 ### Postgres template databases
