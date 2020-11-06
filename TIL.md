@@ -13,7 +13,7 @@ https://docs.python.org/3/library/site.html
 
 You can use this to do things like globally opt out of SSL verification (not that you should in the vast majority of cases!)
 
-https://dalock.xyz/dev/peps/pep-0476/#opting-out
+https://www.python.org/dev/peps/pep-0476/#opting-out
 
 ## 2020-10-28
 
