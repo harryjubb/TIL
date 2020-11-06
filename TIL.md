@@ -1,6 +1,20 @@
 # TIL
 Today I Learned
 
+## 2020-11-06
+
+### Site-wide Python install customisations
+
+Tags: `python` `administration`
+
+You can customise a Python install as a system administrator by creating a `sitecustomize` module in the install's `site-packages` directory, and including code to be applied on every Python run there.
+
+https://docs.python.org/3/library/site.html
+
+You can use this to do things like globally opt out of SSL verification (not that you should in the vast majority of cases!)
+
+https://dalock.xyz/dev/peps/pep-0476/#opting-out
+
 ## 2020-10-28
 
 ### Quick SSL certificates in a pinch
