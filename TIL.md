@@ -5,6 +5,40 @@ Today I Learned
 
 ### Site-wide Python install customisations
 
+Tags: `caddy` `dns` `cloudflare` `pihole`
+
+Hosting sites on a local network with SSL (using the Cloudflare DNS validation module for ACME / Let'sEncrypt validation) on a pihole DHCP / DNS managed network with Caddy: can be tricky as making a local DNS record can throw Caddy's DNS validation off.
+
+In this very specific case, rather than giving a limited config:
+
+```
+tls {env.ACME_EMAIL} { 
+  dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+}
+```
+
+A full config can be provided giving resolvers to use for DNS validation:
+
+```
+example.com {
+    root * /var/caddy/example.com
+    file_server
+    tls {
+        issuer acme {
+            dir https://acme-staging-v02.api.letsencrypt.org/directory
+            dns cloudflare <api_token>
+            resolvers 1.1.1.1 1.0.0.1
+        }
+    }
+}
+```
+
+https://github.com/caddy-dns/cloudflare/issues/13#issuecomment-731636080
+
+## 2020-11-06
+
+### Site-wide Python install customisations
+
 Tags: `python` `administration`
 
 You can customise a Python install as a system administrator by creating a `sitecustomize` module in the install's `site-packages` directory, and including code to be applied on every Python run there.
