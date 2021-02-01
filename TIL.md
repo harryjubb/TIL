@@ -7,7 +7,7 @@ Today I Learned
 
 Tags: `caddy` `dns` `cloudflare` `pihole`
 
-Hosting sites on a local network with SSL (using the Cloudflare DNS validation module for ACME / Let'sEncrypt validation) on a pihole DHCP / DNS managed network with Caddy: can be tricky as making a local DNS record can throw Caddy's DNS validation off.
+Hosting sites on a local network with SSL (using the Cloudflare DNS validation module for ACME / Let'sEncrypt validation) on a [Pi-hole](https://pi-hole.net/) DHCP / DNS managed network with Caddy: can be tricky as making a local DNS record can throw Caddy's DNS validation off.
 
 In this very specific case, rather than giving a limited config:
 
