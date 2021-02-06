@@ -9,6 +9,8 @@ Tags: `rdkit` `docker` `wasm` `javascript`
 
 The [minimal RDKit JS build](https://github.com/rdkit/rdkit/tree/master/Code/MinimalLib) (emscripten compiled to WASM) allows a lot of cheminformatics work (including [2D depictions, fingerprint generation and similarity searching](http://rdkit.blogspot.com/2019/11/introducing-new-rdkit-javascript.html)) to be done in the browser.
 
+### Building the library
+
 Using Docker it's easy to build the library using a single [Dockerfile](https://github.com/rdkit/rdkit/blob/master/Code/MinimalLib/docker/Dockerfile).
 
 If the [Dockerfile](https://github.com/rdkit/rdkit/blob/master/Code/MinimalLib/docker/Dockerfile) is placed on it's own in a folder, build with:
@@ -28,6 +30,26 @@ docker cp $CONTAINER_ID:/src/rdkit/build/Code/MinimalLib/RDKit_minimal.wasm .
 docker stop $CONTAINER_ID
 docker rm $CONTAINER_ID
 ```
+
+Use in your web app with
+
+```html
+<script src="<path/to>/RDKit_minimal.js"></script>
+```
+
+It may be a good idea to add cache-buster to the filename, so that the large-ish (~4.3 MB without gzip) RDKit WASM can be cached with a long lifetime.
+
+If you do, you'll need to rename both the JS and WASM file, and in the JS file, find:
+
+```javascript
+wasmBinaryFile="RDKit_minimal.wasm"
+```
+
+and replace the filename with your altered name.
+
+### Using the library
+
+
 
 ## 2021-02-01
 
