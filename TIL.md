@@ -17,10 +17,12 @@ If the [Dockerfile](https://github.com/rdkit/rdkit/blob/master/Code/MinimalLib/d
 docker build -t rdkitjs . 
 ```
 
+The build will take some time...  ☕️
+
 The built JS and WASM file can then be copied out of a running instance of the container:
 
 ```shell
-CONTAINER_ID=$(docker run -dit rdkitjs sleep 20)
+CONTAINER_ID=$(docker run -d rdkitjs sleep 20)
 docker cp $CONTAINER_ID:/src/rdkit/build/Code/MinimalLib/RDKit_minimal.js .
 docker cp $CONTAINER_ID:/src/rdkit/build/Code/MinimalLib/RDKit_minimal.wasm .
 docker stop $CONTAINER_ID
