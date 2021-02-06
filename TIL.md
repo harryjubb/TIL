@@ -3,7 +3,7 @@ Today I Learned
 
 ## 2021-02-01
 
-### Site-wide Python install customisations
+### Pi-hole Caddy config with SSL / TLS with Cloudflare
 
 Tags: `caddy` `dns` `cloudflare` `pihole`
 
