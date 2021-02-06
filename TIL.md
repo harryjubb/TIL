@@ -1,6 +1,32 @@
 # TIL
 Today I Learned
 
+## 2021-02-06
+
+### Building the RDKit minimal JS library
+
+Tags: `rdkit` `docker` `wasm` `javascript`
+
+The [minimal RDKit JS build](https://github.com/rdkit/rdkit/tree/master/Code/MinimalLib) (emscripten compiled to WASM) allows a lot of cheminformatics work (including [2D depictions, fingerprint generation and similarity searching](http://rdkit.blogspot.com/2019/11/introducing-new-rdkit-javascript.html)) to be done in the browser.
+
+Using Docker it's easy to build the library using a single [Dockerfile](https://github.com/rdkit/rdkit/blob/master/Code/MinimalLib/docker/Dockerfile).
+
+If the [Dockerfile](https://github.com/rdkit/rdkit/blob/master/Code/MinimalLib/docker/Dockerfile) is placed on it's own in a folder, build with:
+
+```shell
+docker build -t rdkitjs . 
+```
+
+The built JS and WASM file can then be copied out of a running instance of the container:
+
+```shell
+CONTAINER_ID=$(docker run -dit rdkitjs sleep 20)
+docker cp $CONTAINER_ID:/src/rdkit/build/Code/MinimalLib/RDKit_minimal.js .
+docker cp $CONTAINER_ID:/src/rdkit/build/Code/MinimalLib/RDKit_minimal.wasm .
+docker stop $CONTAINER_ID
+docker rm $CONTAINER_ID
+```
+
 ## 2021-02-01
 
 ### Pi-hole Caddy config with SSL / TLS with Cloudflare
