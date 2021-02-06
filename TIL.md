@@ -59,7 +59,7 @@ const setupRDKit = async () => {
   let rdkit
 
   try {
-    rdkit = (window as any).initRDKitModule()
+    rdkit = await (window as any).initRDKitModule()
     if (process.env.NODE_ENV !== 'production') {
       console.log('RDKit initialized')
     }
