@@ -31,6 +31,8 @@ docker stop $CONTAINER_ID
 docker rm $CONTAINER_ID
 ```
 
+### Using the library
+
 Use in your web app with
 
 ```html
@@ -47,9 +49,31 @@ wasmBinaryFile="RDKit_minimal.wasm"
 
 and replace the filename with your altered name.
 
-### Using the library
+When loaded, an `initRDKitModule` function is added to `window`. `window.initRDKitModule` returns a `Promise`, which resolves to a handler object for RDKit functionality.
+
+Example Typescript wrapper around `initRDKitModule`:
 
 
+```typescript
+const setupRDKit = async () => {
+  let rdkit
+
+  try {
+    rdkit = (window as any).initRDKitModule()
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('RDKit initialized')
+    }
+    (window as any).rdkit = rdkit
+    return rdkit
+  } catch (error) {
+    console.error('Error initializing RDKit', error)
+  }
+}
+
+export default setupRDKit
+```
+
+Using the above, check out `window.rdkit` in browser development tools to see the functionality available. `window.rdkit.get_mol` allows you to get a molecule from e.g. SMILES; that `Mol` object provides further methods such as `get_svg`.
 
 ## 2021-02-01
 
