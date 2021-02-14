@@ -1,6 +1,16 @@
 # TIL
 Today I Learned
 
+## 2021-02-14
+
+### Language sensitive number formatting
+
+Tags: `javascript` `i18n`
+
+JS has a built-in object for formatting numbers with internationalisation:
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
+
 ## 2021-02-06
 
 ### Building the RDKit minimal JS library
