@@ -1,6 +1,14 @@
 # TIL
 Today I Learned
 
+## 2021-02-25
+
+### Package Python apps in a single executable bundle
+
+Tags: `python`
+
+https://docs.python.org/3/library/zipapp.html
+
 ## 2021-02-14
 
 ### Language sensitive number formatting
