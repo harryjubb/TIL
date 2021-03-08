@@ -1,6 +1,18 @@
 # TIL
 Today I Learned
 
+## 2021-03-08
+
+### Efficiently clear all Terraform state
+
+Tags: `terraform`
+
+The following snippet removes all items from Terraform state, and does so efficiently even if there is remote state locking (i.e. it doesn't acquire the lock for removing each individual state item.
+
+```shell
+terraform state list | cut -f 1 -d '[' | xargs -L 0 terraform state rm
+```
+
 ## 2021-02-25
 
 ### Package Python apps in a single executable bundle
