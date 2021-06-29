@@ -3,6 +3,22 @@ Today I Learned
 
 ## 2021-03-08
 
+### Debugging a hanging Terraform plan
+
+Tags: `terraform`
+
+Stop endless attempted connections to an AWS API with issues:
+
+```terraform
+provider "aws" {
+  # other settings
+  max_retries = 1
+}```
+
+From https://alexwlchan.net/2019/01/debugging-a-stuck-terraform-plan/
+
+## 2021-03-08
+
 ### Efficiently clear all Terraform state
 
 Tags: `terraform`
