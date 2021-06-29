@@ -1,7 +1,7 @@
 # TIL
 Today I Learned
 
-## 2021-03-08
+## 2021-06-29
 
 ### Debugging a hanging Terraform plan
 
@@ -13,7 +13,8 @@ Stop endless attempted connections to an AWS API with issues:
 provider "aws" {
   # other settings
   max_retries = 1
-}```
+}
+```
 
 From https://alexwlchan.net/2019/01/debugging-a-stuck-terraform-plan/
 
