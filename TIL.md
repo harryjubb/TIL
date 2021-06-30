@@ -7,7 +7,9 @@ Today I Learned
 
 Tags: `terraform`
 
-Stop endless attempted connections to an AWS API with issues:
+Via https://alexwlchan.net/2019/01/debugging-a-stuck-terraform-plan/
+
+Stop endless attempted connections to AWS APIs that are exhibiting issues (permissions or otherwise):
 
 ```terraform
 provider "aws" {
@@ -16,9 +18,7 @@ provider "aws" {
 }
 ```
 
-From https://alexwlchan.net/2019/01/debugging-a-stuck-terraform-plan/
-
-The [default behaviour](https://registry.terraform.io/providers/hashicorp/aws/latest/docs#max_retries) can cause very long hangs:
+The [default behaviour](https://registry.terraform.io/providers/hashicorp/aws/latest/docs#max_retries) can cause very long hangs where API(s) are not accessible:
 
 > The delay between the subsequent API calls increases exponentially. If omitted, the default value is 25.
 
