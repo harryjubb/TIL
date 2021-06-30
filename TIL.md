@@ -18,6 +18,10 @@ provider "aws" {
 
 From https://alexwlchan.net/2019/01/debugging-a-stuck-terraform-plan/
 
+The [default behaviour](https://registry.terraform.io/providers/hashicorp/aws/latest/docs#max_retries) can cause very long hangs:
+
+> The delay between the subsequent API calls increases exponentially. If omitted, the default value is 25.
+
 ## 2021-03-08
 
 ### Efficiently clear all Terraform state
