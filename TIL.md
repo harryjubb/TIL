@@ -18,7 +18,7 @@ provider "aws" {
 }
 ```
 
-The [default behaviour](https://registry.terraform.io/providers/hashicorp/aws/latest/docs#max_retries) can cause very long hangs where API(s) are not accessible:
+The [behaviour](https://registry.terraform.io/providers/hashicorp/aws/latest/docs#max_retries) of retrying with `max_retries` can cause very long hangs where API(s) are not accessible:
 
 > The delay between the subsequent API calls increases exponentially. If omitted, the default value is 25.
 
