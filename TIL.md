@@ -1,6 +1,16 @@
 # TIL
 Today I Learned
 
+## 2021-08-03
+
+### Debugging faulty extensions in VSCode
+
+From the `...` context menu in the extensions pane, there's an option to "Start Extension Bisect".
+
+VSCode will run a `git bisect`-like halving of enabled extensions (by disabling half), and you to perform any actions to identify undesired behaviour, then report whether the set of enabled extensions is good or bad. This is repeated until the offending extension(s) are identified.
+
+Handy!
+
 ## 2021-06-29
 
 ### Debugging a hanging Terraform plan
