@@ -1,9 +1,49 @@
 # TIL
 Today I Learned
 
+## 2021-08-06
+
+### Jira Wiki markup for new-style panels
+
+Tags: `jira`
+
+Jira panels are really nice for organising issue descriptions.
+
+In older versions of Jira, these panels could be custom styled with Wiki markup.
+
+In the newer versions of Jira rich text editors, the panel styles are more limited.
+
+The follow Wiki markup panels map to the new-style panels.
+
+```
+{panel:bgColor=#ffebe6}
+This error panel
+{panel}
+
+{panel:bgColor=#deebff}
+This info panel
+{panel}
+
+{panel:bgColor=#e3fcef}
+This success panel
+{panel}
+
+{panel:bgColor=#fefae6}
+This warning panel
+{panel}
+
+{panel:bgColor=#eae6ff}
+This note panel
+{panel}
+```
+
+Via https://community.atlassian.com/t5/Jira-questions/Markdown-for-info-panel-in-Jira-new-issue-view/qaq-p/1183207
+
 ## 2021-08-03
 
 ### Debugging faulty extensions in VSCode
+
+Tags: `vscode`
 
 From the `...` context menu in the extensions pane, there's an option to "Start Extension Bisect".
 
