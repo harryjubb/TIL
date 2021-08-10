@@ -1,6 +1,20 @@
 # TIL
 Today I Learned
 
+## 2021-08-10
+
+### Loop until a command is successful
+
+Tags: `shell` `bash`
+
+`until` can be used to run commands until a given command no longer fails.
+
+```shell
+until docker-compose exec app bash -c 'cat /app/webpack-stats/webpack-stats.json.invalid' | grep '\"status\":\"done\"' ; do echo "*** No webpack-stats.json found, waiting..." ; sleep 10 ; done
+```
+
+https://stackoverflow.com/a/35412943/1108828
+
 ## 2021-08-06
 
 ### Jira Wiki markup for new-style panels
