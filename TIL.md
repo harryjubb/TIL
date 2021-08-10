@@ -3,6 +3,21 @@ Today I Learned
 
 ## 2021-08-10
 
+### OS X: Copy HTML to the clipboard as HTML
+
+Tags: `osx` `clipboard`
+
+It can be useful to copy HTML to the clipboard with a HTML data type, so that applications that accept HTML clipboard content accept it correctly (rather than as the HTML as text).
+
+It's possible to add a HTML string to the clipboard as a HTML copy type by using a hexdumped version with AppleScript:
+
+```shell
+hex=`echo -n "your html code here" | hexdump -ve '1/1 "%.2x"'`
+osascript -e "set the clipboard to «data HTML${hex}»"
+```
+
+https://stackoverflow.com/a/11089226/1108828
+
 ### Loop until a command is successful
 
 Tags: `shell` `bash`
