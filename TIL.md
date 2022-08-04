@@ -1,6 +1,22 @@
 # TIL
 Today I Learned
 
+## 2022-08-04
+
+### Shell: Include comments in multi-line commands
+
+Tags: `shell` `bash` `zsh`
+
+Backtick command substitution can be abused in order to include comments in multi-line commands, where the continuation slash needing to be the last character, and lines needing to be adjacent, would otherwise preclude adding comments:
+
+```shell
+echo CommandName InputFiles `#1st comment` \
+             --option1 arg1 `#2nd comment` \
+             --option2 arg2 `#3rd comment`
+```
+
+https://stackoverflow.com/a/12797512/1108828
+
 ## 2021-08-10
 
 ### OS X: Copy HTML to the clipboard as HTML
