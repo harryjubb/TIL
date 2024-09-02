@@ -1,6 +1,14 @@
 # TIL
 Today I Learned
 
+## 2024-09-02
+
+### Git: If a subrepo breaks due to rebasing in the upstream subrepo, force re-cloning it is the simplest resolution
+
+Tags: `git` `subrepo`
+
+With git subrepo, you can force reclone a subrepo with `-f`, if you hit [issues with rebases breaking subrepo's tracking of parentage](https://github.com/ingydotnet/git-subrepo/issues/348).
+
 ## 2022-08-04
 
 ### Shell: Include comments in multi-line commands
