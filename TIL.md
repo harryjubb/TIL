@@ -1,6 +1,28 @@
 # TIL
 Today I Learned
 
+## 2024-11-26
+
+### Shell: Get the status code of any command in a pipeline
+
+Tags: `shell` `bash` `zsh`
+
+When you run commands in a pipeline, `$?` only tells you the exit status of the last command in the pipeline.
+
+If you need the exit code of a command earlier in a pipeline, you can use the `$PIPESTATUS` array:
+
+```
+#!/bin/bash
+grep some.machine.example.com /etc/hosts 2>&1 | tee /tmp/hosts-results.txt
+if [ "${PIPESTATUS[0]}" -ne "0" ]; then
+  # The grep command failed to find "some.machine.example.com" in /etc/hosts file
+  echo "I don't know the IP address of some.machine.example.com"
+  exit 2
+fi
+```
+
+https://www.shellscript.sh/examples/pipestatus/
+
 ## 2024-09-02
 
 ### Git: If a subrepo breaks due to rebasing in the upstream subrepo, force re-cloning it is the simplest resolution
